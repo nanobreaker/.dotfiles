@@ -1,0 +1,2 @@
+# nanoterm
+WezTerm custom configuration
