@@ -101,7 +101,7 @@ interval=5
 
 # Volume
 [volume]
-label=♪
+label=🔊 
 interval=once
 signal=10
 STEP=5%
@@ -111,6 +111,7 @@ STEP=5%
 LABEL=⚡
 interval=30
 
+# keyboard active layout
 [kbdd_layout]
 command=$SCRIPT_DIR/kbdd_layout
 interval=persist
