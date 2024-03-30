@@ -1,0 +1,116 @@
+# i3blocks config file
+#
+# Please see man i3blocks for a complete reference!
+# The man page is also hosted at http://vivien.github.io/i3blocks
+#
+# List of valid properties:
+#
+# align
+# color
+# command
+# full_text
+# instance
+# interval
+# label
+# min_width
+# name
+# separator
+# separator_block_width
+# short_text
+# signal
+# urgent
+
+# Global properties
+#
+# The top properties below are applied to every block, but can be overridden.
+# Each block command defaults to the script name to avoid boilerplate.
+# Change $SCRIPT_DIR to the location of your scripts!
+command=$SCRIPT_DIR/$BLOCK_NAME
+separator_block_width=15
+markup=none
+
+# i3 window name
+[i3-focusedwindow]
+command=$SCRIPT_DIR/i3-focusedwindow 20
+interval=persist
+
+# CPU load
+[cpu_usage]
+command=$SCRIPT_DIR/cpu_usage
+interval=10
+LABEL=CPU
+T_WARN=50
+T_CRIT=80
+DECIMALS=0
+separator=false
+
+# GPU load
+[gpu-load]
+command=$SCRIPT_DIR/gpu-load
+label=GPU
+interval=10
+#min_width=GPU 100%
+#GPU_BRAND=NVIDIA
+T_WARN=70
+T_CRIT=90
+separator=false
+
+# Memory usage
+[memory]
+label=MEM
+interval=10
+
+# Temperature
+[temperature]
+interval=10
+SENSOR_CHIP=legion_hwmon-isa-0000
+T_WARN=70
+T_CRIT=90
+
+# Disk usage
+[disk]
+label=DISK
+DIR=/
+interval=30
+
+# lan interface monitoring
+[iface]
+LABEL=LAN
+IFACE=enp8s0
+color=#00FF00
+interval=10000
+separator=false
+
+# wlan interface monitoring
+[iface]
+LABEL=WLAN
+IFACE=wlp0s20f3
+color=#00FF00
+interval=10000
+
+# wifi
+# [wifi]
+# INTERFACE=wlp0s20f3
+# label=SIG
+# interval=10000
+
+# Date Time
+[time]
+command=date '+%Y-%m-%d %H:%M:%S'
+interval=5
+
+# Volume
+[volume]
+label=♪
+interval=once
+signal=10
+STEP=5%
+
+# Battery indicator
+[battery]
+LABEL=⚡
+interval=30
+
+[kbdd_layout]
+command=$SCRIPT_DIR/kbdd_layout
+interval=persist
